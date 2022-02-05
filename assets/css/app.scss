@@ -1,0 +1,234 @@
+//@import "reset";
+
+//Variables
+$main-accent: #fc575e;
+$light-accent: #f0f1f5;
+$dark-accent: #333;
+$main-gray: #555;
+
+//Setup
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+//Global
+body {
+  background-color: $light-accent;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 24px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: $main-gray;
+}
+
+.full-screen-opaque {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba($color: #000000, $alpha: 0.85);
+  z-index: 5;
+}
+
+//NAV
+nav {
+  height: 60px;
+  background: $dark-accent;
+  margin-bottom: 25px;
+}
+
+#navContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 786px) {
+  nav {
+    height: 100px;
+  }
+  #navContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.nav-header {
+  color: $light-accent;
+  font-size: 28px;
+  transition: all 0.8s;
+}
+
+#addBtn {
+  font-size: 24px;
+  color: $light-accent;
+  transition: transform 0.3s;
+}
+
+#addBtn:hover {
+  color: $main-accent;
+  transform: scale(1.5);
+}
+
+.nav-header:hover {
+  letter-spacing: 5px;
+  color: $main-accent;
+  transform: scale(1.1);
+}
+
+//Panel
+.panel {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px $main-gray;
+  padding: 25px 20px 20px 20px;
+  margin: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+#addedCategories {
+  margin-bottom: 10px;
+}
+//Form
+
+.form-control {
+  width: 100%;
+  margin: 8px 0;
+  height: 34px;
+  border-radius: 5px;
+  border: 1px solid $main-gray;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: $main-gray;
+}
+
+#addLinkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#addLinkPanel {
+  animation: slide-down 0.8s 0s ease-out;
+}
+
+input[type="submit"],
+button {
+  padding: 8px 22px;
+  border-radius: 5px;
+  border: 1px solid $main-accent;
+  background-color: $main-accent;
+  color: $light-accent;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  cursor: pointer;
+  color: $main-accent;
+  background: white;
+}
+
+.btn-sm {
+  font-size: 10px;
+  padding: 5px 5px;
+}
+
+//Link
+#linkList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-item {
+  flex-basis: 100%;
+}
+
+.link {
+  position: relative;
+}
+
+.link:hover {
+  box-shadow: 5px 5px 15px $main-accent;
+}
+
+.link-options {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.link-date {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.categories {
+  margin: 2px;
+}
+
+.category {
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px;
+  margin: 0 2px;
+  border: 1px solid $main-accent;
+  border-radius: 5px;
+  background-color: $main-accent;
+  color: $light-accent;
+}
+
+@media only screen and (min-width: 786px) {
+  .flex-item {
+    flex-basis: 50%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .flex-item {
+    flex-basis: 33%;
+  }
+}
+
+//Animations
+/* @keyframes duration | easing-function | delay | iteration-count | direction | fill-mode | play-state | name */
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-1000px);
+  }
+  90% {
+    transform: translateY(25px);
+  }
+  95% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

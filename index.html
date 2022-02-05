@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Min private hjemmeside.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/app.css">
+        <title>Link Saver</title>
+    </head>
+    <body>
+        <nav>
+            <div class="container" id="navContainer">
+                <h1 class="nav-header">Link Saver</h1>
+                <a id="addBtn">+</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div id="addLinkContainer" class="">
+                <div class="panel hidden" id="addLinkPanel">
+                    <h3 class="header" id="panel-title">Add Link</h3>
+                    <form id="addLinkForm">
+                        <input type="text" name="title" id="linkTitle" class="form-control" placeholder="Title">
+                        <input type="text" name="title" id="linkURL" class="form-control" placeholder="URL">
+                        <input type="text" name="title" id="linkCategory" class="form-control" placeholder="Categories (comma separated)">
+
+                        <div id="addedCategories">
+
+                        </div>
+
+                        <input type="submit" id="submitButton" value="Submit">
+                        <input type="submit" id="cancelButton" value="Cancel">
+                    </form>
+                </div>
+            </div>
+
+            <div id="linkList">
+
+                <div class="link panel">
+                    <div class="link-options">
+                        <button class="btn-sm">Delete</button>
+                        <button class="btn-sm">Edit</button>
+                    </div>
+
+                    <a href="#">
+                        <h1 class="header">Link Title</h1>
+                    </a>
+
+                    <p class="link-date">28/07-1974</p>
+
+                    <div class="categories">
+                        Categories:
+                        <span class="category">Web Development</span>
+                        <span class="category">JavaScript</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <script src="assets/js/app.js"></script>
+    </body>
+</html>
