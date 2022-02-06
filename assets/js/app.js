@@ -15,7 +15,7 @@ let links = [
     {
         title:'[WIEHL.DK] - My website.',
         url:'http://wiehl.dk',
-        date:new Date(),
+        date:new Date("07/28/1974"),
         categories: ['3D Print','CAD','C/C++','Lua','JavaScript','SQL']
     }
 ];
@@ -169,8 +169,15 @@ function deleteCategory(index){
     displayLinkCategories();
 }
 
+function addLeadingZeros(n) {
+  if (n <= 9) {
+    return "0" + n;
+  }
+  return n
+}
+
 function formatDate(date){
-    return `${("0"+(date.getDay()-1)).slice(-2)}/${("0" + (date.getMonth()+1)).slice(-2)}-${date.getFullYear()}`;
+    return `${addLeadingZeros(date.getDate())}/${addLeadingZeros(date.getMonth() + 1)}-${date.getFullYear()}`;
 }
 
 function setCookie() {
